@@ -28,7 +28,9 @@ jobs:
         with:
           #aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           #aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          role-to-assume: github-action-assume-role
+          role-to-assume: arn:aws:iam::321824248972:role/github-action-assume-role
+          role-session-name: MySessionName
+          mask-aws-account-id: false
           aws-region: us-east-1
 
       - name: Login to Amazon ECR
